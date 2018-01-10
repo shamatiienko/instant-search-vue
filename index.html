@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Searching</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="main" v-cloak>
+        <div class="bar">
+            <input type="text" v-model="searchField" placeholder="Enter title of item">
+        </div>
+        <ul>
+            <li v-for="item in filteredItems">
+                <a v-bind:href="item.url">
+                    <img v-bind:src="item.image">
+                </a>
+                <p>{{item.title}}</p>
+            </li>
+        </ul>
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>
